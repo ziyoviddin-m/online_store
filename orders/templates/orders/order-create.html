@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static humanize %}
+
+
+
+{% block content %}
+
+<div class="breadcrumb-area bg-gray">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}">Главная Страница</a>
+                </li>
+                <li class="active">Оформление заказа</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="checkout-main-area pt-120 pb-120">
+    <div class="container">
+        <div class="checkout-wrap pt-30">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="billing-info-wrap mr-50">
+                        <h3>ПЛАТЁЖНЫЕ РЕКВИЗИТЫ</h3>
+                        <form action="{% url 'orders:order-create' %}" method="post" class="your-order-area">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="billing-info mb-20">
+                                        <label for="{{ form.first_name.id_for_label }}">Имя</label>
+                                        {{ form.first_name }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="billing-info mb-20">
+                                        <label for="{{ form.last_name.id_for_label }}">Фамилия</label>
+                                        {{ form.last_name }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="billing-info mb-20">
+                                        <label for="{{ form.country.id_for_label }}">Страна</label>
+                                        {{ form.country }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="billing-info mb-20">
+                                        <label for="{{ form.city.id_for_label }}">Город</label>
+                                        {{ form.city }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="billing-info mb-20">
+                                        <label for="{{ form.address.id_for_label }}">Адрес</label>
+                                        {{ form.address }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="billing-info mb-20">
+                                        <label for="{{ form.postcode.id_for_label }}">Почтовый индекс</label>
+                                        {{ form.postcode }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="billing-info mb-20">
+                                        <label for="{{ form.email.id_for_label }}">Адрес электронной почты</label>
+                                        {{ form.email }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Place-order">
+                                <a><button type="submit" style="border: 0; background:fixed; color: white; font-size:20px;">ОФОРМИТЬ ЗАКАЗ</button></a>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+                
+
+                <div class="col-lg-5" style="margin-top: 270px;">
+                    <form class="your-order-area">
+                        <h3>ВАШ ЗАКАЗ</h3>
+                        <div class="your-order-wrap gray-bg-4">
+                            <div class="your-order-info-wrap">
+                                <div class="your-order-info">
+                                    <ul>
+                                        <li>Продукт<span>ЦЕНА</span></li>
+                                    </ul>
+                                </div>
+                                <div class="your-order-middle">
+                                    <ul>
+                                        {% for basket in baskets %}
+                                        <li>{{ basket.product.name }} X {{ basket.quantity }} <span>{{ basket.product.price|intcomma }} ₽</span></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="your-order-info order-total">
+                                    <ul>
+                                        <li>ИТОГО <span>{{ baskets.total_sum|intcomma }} ₽</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,1 @@
+[{"model": "products.gender", "pk": 1, "fields": {"title": "Мужчина"}}, {"model": "products.gender", "pk": 2, "fields": {"title": "Женщина"}}, {"model": "products.gender", "pk": 3, "fields": {"title": "Дети"}}]

@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load static cache %}
+
+
+{% block content %}
+<div class="breadcrumb-area bg-gray">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}">Главная Страница</a>
+                </li>
+                <li class="active">Товары</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="shop-area pt-120 pb-120">
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-lg-9">
+                <div class="shop-topbar-wrapper">
+                    <div class="shop-topbar-left">
+                        <div class="view-mode nav">
+                            <a class="active" href="#shop-1" data-toggle="tab"><i class="icon-grid"></i></a>
+                            <a href="#shop-2" data-toggle="tab"><i class="icon-menu"></i></a>
+                        </div>
+                        <p>{% if count < 9 %} Показано 1 - {{ count }} из {{ count }} результатов {% else %} Показано 1 - 9 из {{ count }} результатов {% endif %}</p>
+                    </div>
+
+                </div>
+                <div class="shop-bottom-area">
+                    <div class="tab-content jump">
+                        <div id="shop-1" class="tab-pane active">
+                            <div class="row">
+
+                                
+                                {% if products %}
+                                {% for product in products %}
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <div class="single-product-wrap mb-35">
+                                        <div class="product-img product-img-zoom mb-15">
+                                            <a href="{% url 'products:product_detail' product.id %}">
+                                                <img src="{{ product.image.url }}" alt="">
+                                            </a>
+                                            <div class="product-action-2 tooltip-style-2">
+                                                <a href="{% url 'products:favorite_add' product.id %}"><button title="Избранное"><i class="icon-heart"></i></button></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-content-wrap-2 text-center">
+
+                                            <h3><a href="product-details.html">{{ product.name }}</a></h3>
+                                            <div class="product-price-2">
+                                                <span>{{ product.price }} ₽</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-content-wrap-2 product-content-position text-center">
+
+                                            <h3><a href="{% url 'products:product_detail' product.id %}">{{ product.name }}</a></h3>
+                                            <div class="product-price-2">
+                                                <span>{{ product.price }} ₽</span>
+                                            </div>
+                                            <div class="pro-add-to-cart">
+                                                <a href="{% url 'baskets:basket_add' product.id %}"><button title="Добавить в корзину">Добавить в корзину</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                                {% else %}
+                                <h1 style="margin-left: 35%;">ТОВАРОВ НЕТ!</h1>
+                                {% endif %}
+                                
+
+                            </div>
+                        </div>
+
+                        <div id="shop-2" class="tab-pane">
+                            {% if products %}
+                            {% for product in products %}
+                            <div class="shop-list-wrap mb-30">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-6">
+                                        <div class="product-list-img">
+                                            <a href="{% url 'products:product_detail' product.id %}">
+                                                <img src="{{ product.image.url }}" alt="Product Style">
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 col-lg-7 col-md-6 col-sm-6">
+                                        <div class="shop-list-content">
+                                            <h3><a href="{% url 'products:product_detail' product.id %}">{{ product.name }}</a></h3>
+                                            <div class="pro-list-price">
+                                                <span class="new-price">{{ product.price }} ₽</span>
+
+                                            </div>
+
+                                            <p>{{ product.description }}</p>
+                                            <div class="product-list-action">
+                                                <a href="{% url 'baskets:basket_add' product.id %}"><button title="Добавить в корзину"><i
+                                                        class="icon-basket-loaded"></i></button></a>
+                                                <a href="{% url 'products:favorite_add' product.id %}"><button title="Избранное"><i class="icon-heart"></i></button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                                {% else %}
+                                <h1 style="margin-left: 35%;">ТОВАРОВ НЕТ!</h1>
+                                {% endif %}
+                        </div>
+                    </div>
+                    {% if is_paginated %}
+                    <div class="pro-pagination-style text-center mt-10">
+                        <ul>
+                            <li class="">
+                                <a class="prev"
+                                    href="{% if page_obj.has_previous %} {% url 'products:paginator' page_obj.previous_page_number %} {% else %} # {% endif %}"><i
+                                        class="icon-arrow-left"></i>
+                                </a>
+                            </li>
+
+                            {% for page in paginator.page_range %}
+                            <li>
+                                <a href="{% url 'products:paginator' page %}">
+                                    {{ page }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                            
+                            <li>
+                                <a class="next"
+                                    href="{% if page_obj.has_next %} {% url 'products:paginator' page_obj.next_page_number %} {% else %} # {% endif %}"><i
+                                        class="icon-arrow-right"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="sidebar-wrapper sidebar-wrapper-mrg-right">
+                    <div class="sidebar-widget mb-40">
+                        <h4 class="sidebar-widget-title">Поиск</h4>
+                        <div class="sidebar-search">
+                            <form class="sidebar-search-form" method="get" action="{% url 'products:search_products' %}">
+                                <input type="text" name="search" placeholder="Искать здесь....">
+                                <button type="submit">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget shop-sidebar-border mb-35 pt-40">
+                        <h4 class="sidebar-widget-title">Категории </h4>
+                        <div class="shop-catigory">
+
+                            <ul>
+                                <li><a href="{% url 'products:products' %}">Все</a></li>
+
+                                {% for category in categories %}
+                                <li><a href="{% url 'products:category' category.id %}">{{ category.name }}</a></li>
+
+                                {% endfor %}
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/bootstrap.min.css' %}">
+
+</head>
+<body style="background-color:teal;">
+    
+<main>
+    
+    <div class="container" style="margin-top: 150px;">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header">
+                        <h3 class="text-center font-weight-light my-4">Поздравляем</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <h4>Ваша учетная запись успешно подтверждена!</h4>
+                    </div>
+                    <div class="card-footer text-center">
+                        <div class="small">
+                            <a href="{% url 'users:login' %}">Продолжить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

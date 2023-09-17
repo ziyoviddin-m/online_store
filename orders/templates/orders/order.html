@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static humanize %}
+
+
+{% block content %}
+
+<div class="breadcrumb-area bg-gray">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}">Главная Страница</a>
+                </li>
+                <li class="active">Заказ #{{ object.id }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="cart-main-area pt-115 pb-120">
+    <div class="container">
+        <h3 class="cart-page-title" style="text-align: center;">Ваши Заказ #{{ object.id }}</h3><br>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <form action="#">
+                    <div class="table-content table-responsive cart-table-content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Название товара</th>
+                                    <th>Цена</th>
+                                    <th>Количество</th>
+                                    <th>Сумма</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                {% for purchased_item in object.basket_history.0.purchased_items %}
+                                <tr>
+                                    
+                                    <td class="product-name">{{ purchased_item.products_name }}</td>
+                                    <td class="product-price-cart"><span class="amount">{{ purchased_item.price }} ₽</span></td>
+                                    <td class="product-quantity pro-details-quality">{{ purchased_item.quantity }}</td>
+                                    <td class="product-subtotal">{{ purchased_item.sum|intcomma }} ₽</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12" style="margin-left: 420px;">
+                        <div class="grand-totall">
+                            <br>
+                            <h4 class="grand-totall-title" style="text-align: center;">Итого: {{ object.basket_history.0.total_sum|intcomma }} ₽</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

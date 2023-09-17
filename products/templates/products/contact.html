@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static cache %}
+
+
+{% block content %}
+
+<div class="breadcrumb-area bg-gray">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}">Главная Страница</a>
+                </li>
+                <li class="active">Контакты</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="contact-area pt-115 pb-120">
+    <div class="container">
+        <div class="contact-info-wrap-3 pb-85">
+            <h3>Контактные данные</h3>
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-contact-info-3 text-center mb-30">
+                        <i class="icon-location-pin "></i>
+                        <h4>наш адрес</h4>
+                        <p>Ульяновск, Россия</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-contact-info-3 extra-contact-info text-center mb-30">
+                        <ul>
+                            <li><i class="icon-screen-smartphone"></i>+7 923 784 80 17</li>
+                            <li><i class="icon-envelope "></i> <a href="#">mamadosimovz@gmail.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-contact-info-3 text-center mb-30">
+                        <i class="icon-clock "></i>
+                        <h4>рабочий день</h4>
+                        <p>Понедельник - пятница. 9:00 - 17:00 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
