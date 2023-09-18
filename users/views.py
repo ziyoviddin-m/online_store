@@ -48,7 +48,7 @@ class UserRegistrationView(TitleMixin, SuccessMessageMixin, CreateView):
     template_name = 'users/register.html'
     success_url = reverse_lazy('users:login')
     title = 'ZIYOVIDDIN - Регистрация'
-    success_message = 'Для завершения процесса регистрации, пожалуйста, подтвердите свой адрес электронной почты! Загляните в почту!'
+    success_message = 'Для завершения процесса регистрации, пожалуйста, подтвердите свой адрес электронной почты! Загляните в почту!(Проверьте спам!)'
 
 
 class UserProfileView(TitleMixin, UpdateView):

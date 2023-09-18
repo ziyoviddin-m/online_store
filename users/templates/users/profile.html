@@ -41,7 +41,7 @@
                                 <!-- Single Tab Content Start -->
                                 <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
                                     <div class="myaccount-content">
-                                        <h3>Панель управления</h3>
+                                        <h3>ПАНЕЛЬ УПРАВЛЕНИЯ</h3>
                                         <div class="welcome">
                                             <p>Здравствуйте, <strong>{{ user.first_name }}</strong></p>
                                         </div>
@@ -58,7 +58,6 @@
                                             <table class="table table-bordered">
                                                 <thead class="thead-light">
                                                     <tr>
-                                                        <th>ЗАКАЗ</th>
                                                         <th>Создан</th>
                                                         <th>Статус</th>
                                                         <th>Итого</th>
@@ -68,8 +67,7 @@
                                                 <tbody>
                                                     {% for order in orders %}
                                                     <tr>
-                                                        <td>#{{ order.id }}</td>
-                                                        <td>{{ order.created|naturaltime }}</td>
+                                                        <td>{{ order.created }}</td>
                                                         <td>{{ order.get_status_display }}</td>
                                                         <td>{{ order.basket_history.0.total_sum|intcomma }} ₽</td>
                                                         <td><a href="{% url 'orders:order' order.id %}" class="check-btn sqr-btn ">просмотреть</a></td>
@@ -83,7 +81,7 @@
 
                                 <div class="tab-pane fade" id="account-info" role="tabpanel">
                                     <div class="myaccount-content">
-                                        <h3>Account Details</h3>
+                                        <h3>ДЕТАЛИ УЧЕТНОЙ ЗАПИСИ</h3>
                                         <div class="account-details-form">
                                             <form action="{% url 'users:profile' user.id %}" method="POST">
                                                 {% csrf_token %}
