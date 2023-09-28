@@ -33,6 +33,6 @@
 - Административная панель с возможностью добавления и редактирования товаров  
 
 Скриншоты:
-![Главная страница](.idea/onlinestoremamadosimov.pythonanywhere.com_(Desktop).png)
+![Главная страница](https://github.com/ziyoviddin-m/online_store/blob/d23f4146fdee77c53c72c691a04066690b63b861/.idea/onlinestoremamadosimov.pythonanywhere.com_(Desktop).png)
 
 
