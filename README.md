@@ -32,7 +32,8 @@
 - Просмотр своих заказов  
 - Административная панель с возможностью добавления и редактирования товаров  
 
-Скриншоты:
+Скриншоты:  
+Главная страница
 ![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/d23f4146fdee77c53c72c691a04066690b63b861/.idea/onlinestoremamadosimov.pythonanywhere.com_(Desktop).png)
 
 
