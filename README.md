@@ -50,3 +50,5 @@
 
 Страница одного из товаров
 ![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/31eca94edf0118582c6a79b5efbd220406249354/.idea/onlinestoremamadosimov.pyth_9_(Desktop)%20(1).png)  
+
+Ссылка на сайт: http://onlinestoremamadosimov.pythonanywhere.com/
