@@ -34,5 +34,6 @@
 
 Скриншоты:
 ![Главная страница](https://github.com/ziyoviddin-m/online_store/blob/d23f4146fdee77c53c72c691a04066690b63b861/.idea/onlinestoremamadosimov.pythonanywhere.com_(Desktop).png)
+<img src=".idea/onlinestoremamadosimov.pythonanywhere.com_(Desktop).png" alt="Описание изображения">
 
 
