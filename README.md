@@ -42,6 +42,9 @@
 Страница оформление заказа
 ![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/d23f4146fdee77c53c72c691a04066690b63b861/.idea/onlinestoremamadosimov.pythonanywhere.com_orders_order-create_(Desktop).png)
 
+Страница Корзины
+![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/31eca94edf0118582c6a79b5efbd220406249354/.idea/onlinestoremamadosimov.pythonanywhere.com_basket_(Desktop).png)  
+
 Страница регистрации
 ![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/d23f4146fdee77c53c72c691a04066690b63b861/.idea/onlinestoremamadosimov.pythonanywhere.com_users_register_(Desktop).png)  
 
@@ -51,4 +54,4 @@
 Страница одного из товаров
 ![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/31eca94edf0118582c6a79b5efbd220406249354/.idea/onlinestoremamadosimov.pyth_9_(Desktop)%20(1).png)  
 
-Ссылка на сайт: http://onlinestoremamadosimov.pythonanywhere.com/
+Сайт доступен по ссылке: http://onlinestoremamadosimov.pythonanywhere.com/
