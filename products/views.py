@@ -34,6 +34,13 @@ class ProductDetailView(TitleMixin, DetailView):
 
     def get_context_data(self, *, object_list=None,**kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
+        product = cache.get('product')
+        if not product:
+            context['product'] = Product.objects.get(id=self.object.id)
+            cache.set('product', context['product'], 360)
+        else:
+            context['product'] = product
+
         context['products'] = Product.objects.order_by('-id')[random.randint(1, 5) :random.randint(5, 10)]
         return context
 

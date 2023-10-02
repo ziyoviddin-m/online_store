@@ -17,6 +17,7 @@ class Gender(models.Model):
         verbose_name = 'Gender'
         verbose_name_plural = 'Genders'
 
+
 class ProductCategory(models.Model):
     name = models.CharField(max_length=128, unique=True)
     description = models.TextField(null=True, blank=True)

@@ -3,7 +3,6 @@ from celery import shared_task
 from datetime import timedelta
 from django.utils.timezone import now
 
-
 from users.models import User, EmailVerification
 
 
