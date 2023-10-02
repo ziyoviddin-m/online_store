@@ -51,13 +51,12 @@
 ![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/31eca94edf0118582c6a79b5efbd220406249354/.idea/onlinestoremamadosimov.pythonanywhere.com_users_profile_13_(Desktop).png)  
 
 Страница заказов
-![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/31eca94edf0118582c6a79b5efbd220406249354/.idea/onlinestoremamadosimov.pythonanywhere.com_users_profile_13_(Desktop).png)  
+![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/e6c312123dfdad6cd9e3f6fec87b5a71a840ace1/.idea/2023-10-02_16-06-46.png)  
 
+Страница одного из товаров
+![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/31eca94edf0118582c6a79b5efbd220406249354/.idea/onlinestoremamadosimov.pyth_9_(Desktop)%20(1).png) 
 Страница регистрации
 ![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/d23f4146fdee77c53c72c691a04066690b63b861/.idea/onlinestoremamadosimov.pythonanywhere.com_users_register_(Desktop).png)  
 
 Страница авторизации
-![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/d23f4146fdee77c53c72c691a04066690b63b861/.idea/onlinestoremamadosimov.pythonanywhere.com_users_login_(Desktop).png)  
-
-Страница одного из товаров
-![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/31eca94edf0118582c6a79b5efbd220406249354/.idea/onlinestoremamadosimov.pyth_9_(Desktop)%20(1).png)  
+![Описание изображения](https://github.com/ziyoviddin-m/online_store/blob/d23f4146fdee77c53c72c691a04066690b63b861/.idea/onlinestoremamadosimov.pythonanywhere.com_users_login_(Desktop).png)   
