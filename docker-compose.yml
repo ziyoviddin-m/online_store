@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis
+    restart: always
+
+  web-app:
+    build: .
+    restart: always
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/online_store
+    ports:
+      - '8000:8000'
+    depends_on:
+      - database
+
+  database:
+    image: postgres:latest
+    container_name: postgres_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  celery-worker:
+    restart: always
+    build:
+      context: .
+    command: [ "celery", "--workdir=./", "-A", "online_store", "worker", "-l", "INFO" ]
+
+
+volumes:
+  postgres_data:

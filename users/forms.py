@@ -23,8 +23,6 @@ class UserLoginForm(AuthenticationForm):
 
 
 class UserRegistrationForm(UserCreationForm):
-    first_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Имя'}))
-    last_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Фамилия'}))
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Имя пользователя'}))
     email = forms.CharField(widget=forms.EmailInput(attrs={'placeholder': 'Адрес эл. почты'}))
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': "Введите пароль"}))
@@ -33,7 +31,7 @@ class UserRegistrationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2']
 
     def __init__(self, *args, **kwargs):
         super(UserRegistrationForm, self).__init__(*args, **kwargs)
@@ -47,6 +45,7 @@ class UserRegistrationForm(UserCreationForm):
         # record = EmailVerification.objects.create(code=uuid.uuid4(), user=user, expiration=expiration)
         # record.send_verification_email()
         return user
+
 
 
 class UserProfileForm(UserChangeForm):
